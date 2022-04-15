@@ -15,7 +15,7 @@ else
 			echo "error: $2 is not a directory" >&2
 		fi
 	else
-		wc -c $(find $(grep -Ril "$1" $2)) | sort -n | sed \$d
+		du -bsh  $(find $(grep -Ril "$1" $2) -type f) | sort -n 
 	fi
 fi
 
